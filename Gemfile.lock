@@ -1,5 +1,7 @@
-PATH
-  remote: /Users/marquis/src/cul_omniauth
+GIT
+  remote: https://github.com/cul/cul_omniauth
+  revision: 34d8c645624271d158e23409529bc8d4f8d0f631
+  branch: rails-6
   specs:
     cul_omniauth (0.6.1)
       cancancan (~> 3.0)
