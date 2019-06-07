@@ -56,6 +56,12 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   # Deployment
   gem "capistrano", "~> 3.11", require: false
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rvm', require: false
+  # Just add it to your Gemfile and require it in your Capfile.
+  gem 'capistrano-passenger', require: false
+  
   # Better error page for Rack apps
   gem "better_errors"
   gem "binding_of_caller"
