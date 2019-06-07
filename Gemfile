@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.3'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0.rc1'
 
@@ -36,6 +34,9 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+# Authentication
+gem 'devise'
+
 # Columbia CAS authentication
 # gem 'cul_omniauth', git: 'https://github.com/cul/cul_omniauth', branch: 'rails-6'
 gem 'cul_omniauth', path: '/Users/marquis/src/cul_omniauth'
@@ -53,6 +54,11 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # Deployment
+  gem "capistrano", "~> 3.11", require: false
+  # Better error page for Rack apps
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 group :test do
