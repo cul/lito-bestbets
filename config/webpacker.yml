@@ -93,3 +93,15 @@ production:
 
   # Cache manifest.json for performance
   cache_manifest: true
+
+# Our server environments all follow the production configuration
+
+bestbets_dev:
+  <<: *production
+
+bestbets_test:
+  <<: *production
+
+bestbets_prod:
+  <<: *production
+
