@@ -4,7 +4,11 @@ class BestBetsController < ApplicationController
   # GET /best_bets
   # GET /best_bets.json
   def index
-    @best_bets = BestBet.all
+    if params[:tag]
+      @best_bets = BestBet.where("tags like ?", "%#{params[:tag]}%")
+    else
+      @best_bets = BestBet.all
+    end
   end
 
   # GET /best_bets/1

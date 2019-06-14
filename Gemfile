@@ -44,6 +44,9 @@ gem 'cul_omniauth', git: 'https://github.com/cul/cul_omniauth', branch: 'rails-6
 # Use MySQL for deployed server environments
 gem 'mysql2'
 
+# Styling
+gem 'bootstrap', '~> 4.3.1'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
