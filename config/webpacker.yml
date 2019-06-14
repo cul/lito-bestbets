@@ -97,11 +97,11 @@ production:
 # Our server environments all follow the production configuration
 
 bestbets_dev:
-  <<: *production
+  <<: *default
 
 bestbets_test:
-  <<: *production
+  <<: *default
 
 bestbets_prod:
-  <<: *production
+  <<: *default
 
