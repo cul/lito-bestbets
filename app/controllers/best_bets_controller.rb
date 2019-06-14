@@ -1,4 +1,7 @@
 class BestBetsController < ApplicationController
+
+  before_action :authenticate_user!, except: [:index]
+
   before_action :set_best_bet, only: [:show, :edit, :update, :destroy]
 
   # GET /best_bets
@@ -29,6 +32,7 @@ class BestBetsController < ApplicationController
   # POST /best_bets.json
   def create
     @best_bet = BestBet.new(best_bet_params)
+    @best_bet.created_by = current_user.uid
 
     respond_to do |format|
       if @best_bet.save
@@ -45,7 +49,7 @@ class BestBetsController < ApplicationController
   # PATCH/PUT /best_bets/1.json
   def update
     respond_to do |format|
-      if @best_bet.update(best_bet_params)
+      if @best_bet.update(best_bet_params.merge(updated_by: current_user.uid))
         format.html { redirect_to @best_bet, notice: 'Best bet was successfully updated.' }
         format.json { render :show, status: :ok, location: @best_bet }
       else

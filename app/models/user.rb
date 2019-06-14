@@ -91,10 +91,7 @@ class User < ApplicationRecord
 
   def set_personal_info_via_ldap
     if uid
-      # This should use Resolv-Replace instead of DNS
-      ldap_ip_address = Resolv.getaddress('ldap.columbia.edu')
-
-      entry = Net::LDAP.new(host: ldap_ip_address, port: 389).search(base: 'o=Columbia University, c=US', filter: Net::LDAP::Filter.eq('uid', uid)) || []
+      entry = Net::LDAP.new(host: 'ldap.columbia.edu', port: 389).search(base: 'o=Columbia University, c=US', filter: Net::LDAP::Filter.eq('uid', uid)) || []
       entry = entry.first
 
       if entry

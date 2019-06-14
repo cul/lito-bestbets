@@ -17,5 +17,16 @@ module Bestbets
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+
+    # Access-Control-Allow-Origin
+    config.middleware.insert_before 0, Rack::Cors, debug: false do
+      allow do
+        origins /localhost/, /https*:\/\/.*?columbia\.edu/
+        resource '/best_bets.json', headers: :any, methods: [:get, :options]
+      end
+    end
+
+
   end
 end

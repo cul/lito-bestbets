@@ -51,6 +51,15 @@ gem 'mysql2'
 # Use Twitter Bootstrap for styling
 gem 'bootstrap-sass', '~> 3.3.0'
 
+# essential
+gem 'jquery-rails'
+
+# Fetch ldap details - first name, last name, etc.
+gem 'net-ldap'
+
+# Cross-Origin Resource Sharing for Best Bets JSON
+gem 'rack-cors', require: 'rack/cors'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
