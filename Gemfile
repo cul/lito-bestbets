@@ -60,6 +60,8 @@ gem 'net-ldap'
 # Cross-Origin Resource Sharing for Best Bets JSON
 gem 'rack-cors', require: 'rack/cors'
 
+# For cleaning up leading and trailing whitespace on model attributes
+gem 'strip_attributes', '~> 1.9'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -80,7 +82,7 @@ group :development do
   gem 'capistrano-rvm', require: false
   # Just add it to your Gemfile and require it in your Capfile.
   gem 'capistrano-passenger', require: false
-  
+
   # Better error page for Rack apps
   gem "better_errors"
   gem "binding_of_caller"
