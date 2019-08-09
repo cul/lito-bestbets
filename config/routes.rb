@@ -7,9 +7,9 @@ Rails.application.routes.draw do
     get 'sign_out', :to => 'users/sessions#destroy', :as => :destroy_user_session
   end
 
-  resources :best_bets
+  resources :key_resources
   
-  root to: 'best_bets#index'
+  root to: 'key_resources#index'
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

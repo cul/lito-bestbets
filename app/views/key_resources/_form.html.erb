@@ -1,12 +1,12 @@
 
-<%= form_with(model: best_bet, local: true, class: 'form-horizontal') do |form| %>
+<%= form_with(model: key_resource, local: true, class: 'form-horizontal') do |form| %>
 
-  <% if best_bet.errors.any? %>
+  <% if key_resource.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(best_bet.errors.count, "error") %> prohibited this best_bet from being saved:</h2>
+      <h2><%= pluralize(key_resource.errors.count, "error") %> prohibited this key_resource from being saved:</h2>
 
       <ul>
-        <% best_bet.errors.full_messages.each do |message| %>
+        <% key_resource.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>

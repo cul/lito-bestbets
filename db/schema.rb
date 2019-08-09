@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_06_03_010101) do
 
-  create_table "best_bets", force: :cascade do |t|
+  create_table "key_resources", force: :cascade do |t|
     t.string "title"
     t.string "url"
     t.string "description"

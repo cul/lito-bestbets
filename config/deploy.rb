@@ -1,8 +1,8 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.0"
 
-set :application, "bestbets"
-set :repo_url, "git@github.com:cul/lito-bestbets.git"
+set :application, "key_resources"
+set :repo_url, "git@github.com:cul/ldpd-key-resources.git"
 
 # Default branch is :master
 ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -42,4 +42,3 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/syst
 
 # Deploy account doesn't directly call passenger
 set :passenger_restart_with_touch, true
-

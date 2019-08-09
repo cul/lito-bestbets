@@ -1,6 +1,6 @@
-class CreateBestBets < ActiveRecord::Migration[6.0]
+class CreateKeyResources < ActiveRecord::Migration[6.0]
   def change
-    create_table :best_bets do |t|
+    create_table :key_resources do |t|
       t.string :title
       t.string :url
       t.string :description

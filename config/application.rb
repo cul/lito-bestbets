@@ -23,7 +23,7 @@ module Bestbets
     config.middleware.insert_before 0, Rack::Cors, debug: false do
       allow do
         origins /localhost/, /https*:\/\/.*?columbia\.edu/
-        resource '/best_bets.json', headers: :any, methods: [:get, :options]
+        resource '/key_resources.json', headers: :any, methods: [:get, :options]
       end
     end
 

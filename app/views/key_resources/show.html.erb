@@ -1,0 +1,38 @@
+
+<p>
+  <strong>Title:</strong>
+  <%= @key_resource.title %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @key_resource.url %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @key_resource.description %>
+</p>
+
+<p>
+  <strong>Keywords:</strong>
+  <%= @key_resource.keywords %>
+</p>
+
+<p>
+  <strong>Tags:</strong>
+  <%= @key_resource.tags %>
+</p>
+
+<p>
+  <strong>Created by:</strong>
+  <%= @key_resource.created_by %>
+</p>
+
+<p>
+  <strong>Updated by:</strong>
+  <%= @key_resource.updated_by %>
+</p>
+
+<%= link_to 'Edit', edit_key_resource_path(@key_resource) %> |
+<%= link_to 'Back', key_resources_path %>

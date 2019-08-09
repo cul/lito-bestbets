@@ -7,7 +7,7 @@
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
-server 'bestbets-dev.cul.columbia.edu', user: 'litoserv', roles: %w(app db web)
+server 'key-resources-dev.library.columbia.edu', user: 'ldpdserv', roles: %w(app db web)
 
 
 # role-based syntax
@@ -32,8 +32,8 @@ server 'bestbets-dev.cul.columbia.edu', user: 'litoserv', roles: %w(app db web)
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
 
-set :deploy_to, '/opt/passenger/lito/bestbets_dev'
-set :rvm_ruby_version, 'bestbets'
+set :deploy_to, '/opt/passenger/lito/key_resources_dev'
+set :rvm_ruby_version, 'key_resources_dev'
 
 
 # Custom SSH Options

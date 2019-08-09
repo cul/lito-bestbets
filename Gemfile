@@ -57,7 +57,7 @@ gem 'jquery-rails'
 # Fetch ldap details - first name, last name, etc.
 gem 'net-ldap'
 
-# Cross-Origin Resource Sharing for Best Bets JSON
+# Cross-Origin Resource Sharing for Key Resources JSON
 gem 'rack-cors', require: 'rack/cors'
 
 # For cleaning up leading and trailing whitespace on model attributes

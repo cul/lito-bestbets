@@ -1,0 +1,41 @@
+<h1>Key Resources</h1>
+
+<table class='table table-striped table-bordered table-hover table-sm'>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Url</th>
+      <th>Description</th>
+      <th>Keywords</th>
+      <th>Tags</th>
+      <th>Created by</th>
+      <th>Updated by</th>
+      <% if current_user.present? %>
+        <th colspan="3"></th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @key_resources.each do |key_resource| %>
+      <tr>
+        <td><%= key_resource.title %></td>
+        <td><%= key_resource.url %></td>
+        <td><%= key_resource.description %></td>
+        <td><%= key_resource.keywords %></td>
+        <td><%= key_resource.tags %></td>
+        <td><%= key_resource.created_by %></td>
+        <td><%= key_resource.updated_by %></td>
+        <% if current_user.present? %>
+          <td><%= link_to 'Show', key_resource %></td>
+          <td><%= link_to 'Edit', edit_key_resource_path(key_resource) %></td>
+          <td><%= link_to 'Destroy', key_resource, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Key Resource', new_key_resource_path %>
