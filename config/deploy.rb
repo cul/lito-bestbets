@@ -1,11 +1,17 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.0"
 
-set :application, "key_resources"
+set :group, 'ldpd'
+set :application, 'key_resources'
 set :repo_url, "git@github.com:cul/ldpd-key-resources.git"
+set :remote_user, "#{fetch(:group)}serv"
+set :deploy_name, "#{fetch(:application)}_#{fetch(:stage)}"
+set :deploy_to, "/opt/passenger/#{fetch(:group)}/#{fetch(:deploy_name)}"
+set :rails_env, fetch(:deploy_name)
+set :rvm_ruby_version, fetch(:deploy_name)
 
 # Default branch is :master
-ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, "/var/www/my_app_name"
@@ -21,8 +27,7 @@ ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 # set :pty, true
 
 # Default value for :linked_files is []
-# append :linked_files, "config/database.yml"
-append :linked_files, "config/database.yml", "config/app_config.yml", "config/secrets.yml"
+append :linked_files, "config/database.yml", "config/master.key"
 
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
@@ -35,7 +40,7 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/syst
 # set :local_user, -> { `git config user.name`.chomp }
 
 # Default value for keep_releases is 5
-# set :keep_releases, 5
+set :keep_releases, 2
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
