@@ -1,5 +1,4 @@
 class Users::SessionsController < Devise::SessionsController
-
   def new_session_path(scope)
     new_user_session_path # this accomodates Users namespace of the controller
   end
@@ -19,16 +18,12 @@ class Users::SessionsController < Devise::SessionsController
   def developer_new
     return unless Rails.env.development?
     unless user_signed_in?
-      dev_user = User.find_by(uid: 'development') || User.create!({
-        uid: 'development',
-        email: 'development@example.com',
-        first_name: 'Development',
-        last_name: 'User',
-        password: 'development'
-      })
+      dev_user = User.find_by(
+        uid: DEVELOPMENT_USER_CONFIG[:uid]
+      ) || User.create!(DEVELOPMENT_USER_CONFIG)
+
       sign_in(dev_user, scope: :user)
     end
     redirect_to root_path
   end
-
 end

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :key_resources
 
-  root to: 'key_resources#index'
+  root to: redirect('key_resources')
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

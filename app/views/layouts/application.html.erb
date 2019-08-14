@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-  <%= render '/layouts/head' %>
+  <%= render 'layouts/head' %>
 <body>
-  <%= render '/layouts/topnavbar' %>
+  <%= render 'layouts/topnavbar' %>
   <div class="container">
-    <%= render '/layouts/messages' %>
+    <%= render 'layouts/messages' %>
     <%= yield %>
   </div>
   <%= javascript_pack_tag 'application' %>
