@@ -16,6 +16,11 @@
             </div>
           </li>
         <% else %>
+          <% if Rails.env.development? %>
+            <li class="nav-item">
+              <%= link_to "Non-CAS Developer Log In", developer_new_user_session_path, {class: 'nav-link'} %>
+            </li>
+          <% end %>
           <li class="nav-item">
             <%= link_to "Log In", user_saml_omniauth_authorize_path, {class: 'nav-link'} %>
           </li>

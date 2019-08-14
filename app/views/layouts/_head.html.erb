@@ -1,11 +1,13 @@
 <head>
   <title><%= content_for(:title) || 'Key Resources' %></title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <%= favicon_link_tag asset_path('favicon-crown.png'), rel: 'icon', type: 'image/png' %>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
-  <% # stylesheet_pack_tag is available as long as javascript_pack_tag includes at least one css file %>
-  <%= stylesheet_pack_tag 'application', media: 'all' %>
-  <%= javascript_pack_tag 'application' %>
+  <%
+    # stylesheet_pack_tag is available as long as javascript_pack_tag includes
+    # at least one css file and `extract_css: true` is present in webpacker.yml
+  %>
+  <%= stylesheet_pack_tag 'application' %>
 </head>

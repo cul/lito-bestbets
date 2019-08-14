@@ -14,5 +14,21 @@ class Users::SessionsController < Devise::SessionsController
     redirect_to user_saml_omniauth_authorize_path
   end
 
-end
+  # Log in with a development account instead of the default CAS login.
+  # Used only in the development environment, as a convenience.
+  def developer_new
+    return unless Rails.env.development?
+    unless user_signed_in?
+      dev_user = User.find_by(uid: 'development') || User.create!({
+        uid: 'development',
+        email: 'development@example.com',
+        first_name: 'Development',
+        last_name: 'User',
+        password: 'development'
+      })
+      sign_in(dev_user, scope: :user)
+    end
+    redirect_to root_path
+  end
 
+end
