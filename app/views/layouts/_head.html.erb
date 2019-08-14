@@ -1,13 +1,11 @@
-
 <head>
-
-  <title><%= content_for(:title) || 'Valet' %></title>
+  <title><%= content_for(:title) || 'Key Resources' %></title>
 
   <%= favicon_link_tag asset_path('favicon-crown.png'), rel: 'icon', type: 'image/png' %>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
-  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <% # stylesheet_pack_tag is available as long as javascript_pack_tag includes at least one css file %>
+  <%= stylesheet_pack_tag 'application', media: 'all' %>
   <%= javascript_pack_tag 'application' %>
-
 </head>

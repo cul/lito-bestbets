@@ -1,5 +1,8 @@
+// app css entry point
+import '../key_resources/stylesheets/key_resources.scss';
 
-//= require jquery
-//= require jquery_ujs
+import 'bootstrap';
 
-//= require bootstrap-sprockets
+document.addEventListener('DOMContentLoaded', () => {
+  //console.log('ready!');
+});

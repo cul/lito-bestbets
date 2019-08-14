@@ -1,24 +1,32 @@
-# README
+# Key Resources
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An application for creating and querying for web resources (descriptions + links).
 
-Things you may want to cover:
+## Requirements
 
-* Ruby version
+- Ruby 2.5
+- Sqlite3 or MySQL (tested with MySQL 5.5)
 
-* System dependencies
+## First-Time Setup (for developers)
 
-* Configuration
+```
+git clone git@github.com:cul/ldpd-key-resources.git # Clone the repo
+cd ldpd-key-resources # Switch to the application directory
+bundle install # Install gem dependencies
+yarn install # this assumes you have node and yarn installed (tested with Node 8 and Node 10)
+...TODO: Add additional steps...
+rails s -p 3000 # Start the application using rails server
+```
+And for faster React app recompiling during development, run this in a separate terminal window:
 
-* Database creation
+```
+./bin/webpack-dev-server
+```
 
-* Database initialization
+Then navigate to http://localhost:3000 in your browser.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Deployment
+We use Capistrano for deployment. To deploy to our temporary dev instance run:
+```
+cap dev deploy
+```
