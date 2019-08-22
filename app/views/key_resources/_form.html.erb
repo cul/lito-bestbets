@@ -35,6 +35,13 @@
   </div>
 
   <div class="form-group">
+    <%= form.label :contexts, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-8">
+      <%= form.text_field :contexts, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
     <%= form.label :keywords, class: 'col-sm-2 control-label' %>
     <div class="col-sm-8">
       <%= form.text_field :keywords, class: 'form-control' %>
@@ -42,9 +49,9 @@
   </div>
 
   <div class="form-group">
-    <%= form.label :tags, class: 'col-sm-2 control-label' %>
+    <%= form.label :categories, class: 'col-sm-2 control-label' %>
     <div class="col-sm-8">
-      <%= form.text_field :tags, class: 'form-control' %>
+      <%= form.text_field :categories, class: 'form-control' %>
     </div>
   </div>
 
@@ -56,5 +63,3 @@
   </div>
 
 <% end %>
-
-

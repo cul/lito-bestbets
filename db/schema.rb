@@ -14,14 +14,17 @@ ActiveRecord::Schema.define(version: 2019_06_03_010101) do
 
   create_table "key_resources", force: :cascade do |t|
     t.string "title"
-    t.string "url"
+    t.text "url"
+    t.string "url_hash"
     t.string "description"
+    t.text "contexts"
     t.text "keywords"
-    t.text "tags"
+    t.text "categories"
     t.string "created_by"
     t.string "updated_by"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["url_hash"], name: "index_key_resources_on_url_hash", unique: true
   end
 
   create_table "logs", force: :cascade do |t|

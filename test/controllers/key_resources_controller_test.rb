@@ -17,7 +17,7 @@ class KeyResourcesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create key_resource" do
     assert_difference('KeyResource.count') do
-      post key_resources_url, params: { key_resource: { created_by: @key_resource.created_by, description: @key_resource.description, keywords: @key_resource.keywords, tags: @key_resource.tags, title: @key_resource.title, updated_by: @key_resource.updated_by, url: @key_resource.url } }
+      post key_resources_url, params: { key_resource: { created_by: @key_resource.created_by, description: @key_resource.description, keywords: @key_resource.keywords, contexts: @key_resource.contexts, categories: @key_resource.categories, title: @key_resource.title, updated_by: @key_resource.updated_by, url: @key_resource.url } }
     end
 
     assert_redirected_to key_resource_url(KeyResource.last)
@@ -34,7 +34,7 @@ class KeyResourcesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update key_resource" do
-    patch key_resource_url(@key_resource), params: { key_resource: { created_by: @key_resource.created_by, description: @key_resource.description, keywords: @key_resource.keywords, tags: @key_resource.tags, title: @key_resource.title, updated_by: @key_resource.updated_by, url: @key_resource.url } }
+    patch key_resource_url(@key_resource), params: { key_resource: { created_by: @key_resource.created_by, description: @key_resource.description, keywords: @key_resource.keywords, contexts: @key_resource.contexts, categories: @key_resource.categories, title: @key_resource.title, updated_by: @key_resource.updated_by, url: @key_resource.url } }
     assert_redirected_to key_resource_url(@key_resource)
   end
 

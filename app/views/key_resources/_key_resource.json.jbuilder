@@ -1,4 +1,4 @@
-json.extract! key_resource, :id, :title, :url, :description, :keywords, :tags
+json.extract! key_resource, :id, :title, :url, :description, :contexts, :keywords, :categories
 
 json.haystack [key_resource.title, key_resource.description, key_resource.keywords].join(' ')
 

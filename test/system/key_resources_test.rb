@@ -17,7 +17,8 @@ class KeyResourcesTest < ApplicationSystemTestCase
     fill_in "Created by", with: @key_resource.created_by
     fill_in "Description", with: @key_resource.description
     fill_in "Keywords", with: @key_resource.keywords
-    fill_in "Tags", with: @key_resource.tags
+    fill_in "Contexts", with: @key_resource.contexts
+    fill_in "Categories", with: @key_resource.categories
     fill_in "Title", with: @key_resource.title
     fill_in "Updated by", with: @key_resource.updated_by
     fill_in "Url", with: @key_resource.url
@@ -34,7 +35,8 @@ class KeyResourcesTest < ApplicationSystemTestCase
     fill_in "Created by", with: @key_resource.created_by
     fill_in "Description", with: @key_resource.description
     fill_in "Keywords", with: @key_resource.keywords
-    fill_in "Tags", with: @key_resource.tags
+    fill_in "Contexts", with: @key_resource.contexts
+    fill_in "Categories", with: @key_resource.categories
     fill_in "Title", with: @key_resource.title
     fill_in "Updated by", with: @key_resource.updated_by
     fill_in "Url", with: @key_resource.url

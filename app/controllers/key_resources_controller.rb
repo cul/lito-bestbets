@@ -77,6 +77,6 @@ class KeyResourcesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def key_resource_params
-      params.require(:key_resource).permit(:title, :url, :description, :keywords, :tags, :created_by, :updated_by)
+      params.require(:key_resource).permit(:title, :url, :description, :contexts, :keywords, :categories, :created_by, :updated_by)
     end
 end
