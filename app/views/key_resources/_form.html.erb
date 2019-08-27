@@ -1,10 +1,8 @@
-
 <%= form_with(model: key_resource, local: true, class: 'form-horizontal') do |form| %>
 
   <% if key_resource.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(key_resource.errors.count, "error") %> prohibited this key_resource from being saved:</h2>
-
+    <div class="alert alert-danger">
+      <h2 class="h4"><%= pluralize(key_resource.errors.count, "error") %> prohibited this key_resource from being saved:</h2>
       <ul>
         <% key_resource.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -14,52 +12,47 @@
   <% end %>
 
   <div class="form-group">
-    <%= form.label :title, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-8">
-      <%= form.text_field :title, class: 'form-control' %>
-    </div>
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= form.label :url, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-8">
-      <%= form.text_field :url, class: 'form-control' %>
-    </div>
+    <%= form.label :url %>
+    <%= form.text_field :url, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= form.label :description, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-8">
-      <%= form.text_area :description, class: 'form-control' %>
-    </div>
+    <%= form.label :description %>
+    <%= form.text_area :description, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= form.label :contexts, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-8">
-      <%= form.text_field :contexts, class: 'form-control' %>
-    </div>
+    <%= form.label :contexts %>
+    <%= form.text_field :contexts, class: 'form-control' %>
+    <p class="form-text text-muted">
+      <small>A comma-delimited list (e.g. BestBets, ServicesTools).</small>
+    </p>
   </div>
 
   <div class="form-group">
-    <%= form.label :keywords, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-8">
-      <%= form.text_field :keywords, class: 'form-control' %>
-    </div>
+    <%= form.label :keywords %>
+    <%= form.text_field :keywords, class: 'form-control' %>
+    <p class="form-text text-muted">
+      <small>A comma-delimited list (e.g. mla, bibliography).</small>
+    </p>
   </div>
 
   <div class="form-group">
-    <%= form.label :categories, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-8">
-      <%= form.text_field :categories, class: 'form-control' %>
-    </div>
+    <%= form.label :categories %>
+    <%= form.text_field :categories, class: 'form-control' %>
+    <p class="form-text text-muted">
+      <small>A comma-delimited list (e.g. faculty, student, visitor).</small>
+    </p>
   </div>
 
   <div class="actions form-group">
-    <div class="col-sm-2">&nbsp;  </div>
-    <div class="col-sm-8">
-      <%= form.submit %>
-    </div>
+    <%= link_to 'Go Back', key_resources_path, class: 'btn btn-danger' %>
+    <%= form.submit 'Update', class: 'btn btn-primary float-right' %>
   </div>
 
 <% end %>

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :key_resources
+  resources :key_resources, except: [:show]
 
   root to: redirect('key_resources')
 
