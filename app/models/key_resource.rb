@@ -1,8 +1,8 @@
 class KeyResource < ApplicationRecord
+  default_scope { order(title: :asc) }
+
   strip_attributes collapse_spaces: true
-
   before_validation :hash_url
-
   validates :title, presence: true, uniqueness: true
   # We don't have a unique index on the url field in the database because it's
   # an index key for a single-column index can be up to 767 bytes. We want to

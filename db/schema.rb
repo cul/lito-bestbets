@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2019_06_03_010101) do
     t.string "updated_by"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["title"], name: "index_key_resources_on_title", unique: true
     t.index ["url_hash"], name: "index_key_resources_on_url_hash", unique: true
   end
 

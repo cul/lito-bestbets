@@ -1,7 +1,6 @@
 class KeyResourcesController < ApplicationController
 
   before_action :authenticate_user!, except: [:index]
-
   before_action :set_key_resource, only: [:show, :edit, :update, :destroy]
 
   # GET /key_resources
