@@ -1,0 +1,11 @@
+<% if @context_filter.present? || @category_filter.present? %>
+  <div class="mb-3">
+    <strong>Current filters:</strong>
+    <% if @context_filter.present? %>
+      <%= link_to (h(@context_filter) + ' <i class="fas fa-times-circle"></i>'.html_safe).html_safe, key_resources_path(category: params[:category]), class: 'badge badge-pill badge-primary' %>
+    <% end %>
+    <% if @category_filter.present? %>
+      <%= link_to (h(@category_filter) + ' <i class="fas fa-times-circle"></i>'.html_safe).html_safe, key_resources_path(context: params[:context]), class: 'badge badge-pill badge-info' %>
+    <% end %>
+  </div>
+<% end %>

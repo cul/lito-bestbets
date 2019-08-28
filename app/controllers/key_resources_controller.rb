@@ -7,8 +7,24 @@ class KeyResourcesController < ApplicationController
   # GET /key_resources
   # GET /key_resources.json
   def index
-    if params[:tag]
-      @key_resources = KeyResource.where("tags like ?", "%#{params[:tag]}%")
+    where_clause = []
+    query_args = []
+
+    @context_filter = params[:context]&.strip
+    @category_filter = params[:category]&.strip
+
+    if @context_filter.present?
+      where_clause << 'contexts like ?'
+      query_args << "%#{@context_filter}%"
+    end
+
+    if @category_filter.present?
+      where_clause << 'categories like ?'
+      query_args << "%#{@category_filter}%"
+    end
+
+    if where_clause.present?
+      @key_resources = KeyResource.where(where_clause.join(' AND '), *query_args)
     else
       @key_resources = KeyResource.all
     end
