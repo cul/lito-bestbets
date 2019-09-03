@@ -1,43 +1,28 @@
+<h1 class="h2 mb-4 float-left">Key Resource: <%= @key_resource.title %></h1>
+<%= link_to 'Edit Key Resource'.html_safe, edit_key_resource_path(@key_resource), class: 'btn btn-primary float-right mb-1 ml-1' %>
+<%= link_to 'View All Key Resources'.html_safe, key_resources_path, class: 'btn btn-secondary float-right mb-1' %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @key_resource.title %>
-</p>
+<div class="clearfix"></div>
 
-<p>
-  <strong>Url:</strong>
-  <%= @key_resource.url %>
-</p>
+<dl class="row">
+  <dt class="col-sm-3">Title</dt>
+  <dd class="col-sm-9"><%= @key_resource.title %></dd>
 
-<p>
-  <strong>Description:</strong>
-  <%= @key_resource.description %>
-</p>
+  <dt class="col-sm-3">URL</dt>
+  <dd class="col-sm-9"><%= @key_resource.url %></dd>
 
-<p>
-  <strong>Contexts:</strong>
-  <%= @key_resource.contexts %>
-</p>
+  <dt class="col-sm-3">Description</dt>
+  <dd class="col-sm-9"><%= @key_resource.description %></dd>
 
-<p>
-  <strong>Keywords:</strong>
-  <%= @key_resource.keywords %>
-</p>
+  <dt class="col-sm-3">Contexts</dt>
+  <dd class="col-sm-9"><%= @key_resource.contexts %></dd>
 
-<p>
-  <strong>Categories:</strong>
-  <%= @key_resource.categories %>
-</p>
+  <dt class="col-sm-3">Keywords</dt>
+  <dd class="col-sm-9"><%= @key_resource.keywords %></dd>
 
-<p>
-  <strong>Created by:</strong>
-  <%= @key_resource.created_by %>
-</p>
+  <dt class="col-sm-3">Categories</dt>
+  <dd class="col-sm-9"><%= @key_resource.categories %></dd>
 
-<p>
-  <strong>Updated by:</strong>
-  <%= @key_resource.updated_by %>
-</p>
-
-<%= link_to 'Edit', edit_key_resource_path(@key_resource) %> |
-<%= link_to 'Back', key_resources_path %>
+  <dt class="col-sm-3">Updated By</dt>
+  <dd class="col-sm-9"><%= @key_resource.updated_by %></dd>
+</dl>

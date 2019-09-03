@@ -51,8 +51,8 @@
   </div>
 
   <div class="actions form-group">
-    <%= link_to 'Go Back', key_resources_path, class: 'btn btn-danger' %>
-    <%= form.submit 'Update', class: 'btn btn-primary float-right' %>
+    <%= link_to 'Cancel', @key_resource.id.present? ? key_resource_path(@key_resource) : key_resources_path, class: 'btn btn-danger' %>
+    <%= form.submit 'Save', class: 'btn btn-primary float-right' %>
   </div>
 
 <% end %>

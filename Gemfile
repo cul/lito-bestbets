@@ -64,6 +64,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   # Deployment
   gem "capistrano", "~> 3.11", require: false
+  gem 'capistrano-cul', require: false
   gem 'capistrano-rails', require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano-rvm', require: false

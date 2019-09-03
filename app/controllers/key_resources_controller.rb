@@ -51,7 +51,7 @@ class KeyResourcesController < ApplicationController
 
     respond_to do |format|
       if @key_resource.save
-        format.html { redirect_to @key_resource, notice: 'Best bet was successfully created.' }
+        format.html { redirect_to key_resource_path(@key_resource), notice: 'Key Resource was successfully created.' }
         format.json { render :show, status: :created, location: @key_resource }
       else
         format.html { render :new }
@@ -65,7 +65,7 @@ class KeyResourcesController < ApplicationController
   def update
     respond_to do |format|
       if @key_resource.update(key_resource_params.merge(updated_by: current_user.uid))
-        format.html { redirect_to @key_resource, notice: 'Best bet was successfully updated.' }
+        format.html { redirect_to key_resource_path(@key_resource), notice: 'Key Resource was successfully updated.' }
         format.json { render :show, status: :ok, location: @key_resource }
       else
         format.html { render :edit }
@@ -79,7 +79,7 @@ class KeyResourcesController < ApplicationController
   def destroy
     @key_resource.destroy
     respond_to do |format|
-      format.html { redirect_to key_resources_url, notice: 'Best bet was successfully destroyed.' }
+      format.html { redirect_to key_resources_url, notice: 'Key Resource was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
