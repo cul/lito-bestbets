@@ -4,7 +4,7 @@
 class User < ApplicationRecord
   include Cul::Omniauth::Users
 
-  # cul_omniauth includes several options (:registerable, 
+  # cul_omniauth includes several options (:registerable,
   # :recoverable, :rememberable, :trackable, :validatable, ...)
   # but we also want...
   devise :timeoutable
@@ -28,7 +28,7 @@ class User < ApplicationRecord
   # def self.on_campus?(ip_addr)
   #   # check passed string against regexp from standard library
   #   return false unless ip_addr =~ Resolv::IPv4::Regex
-  # 
+  #
   #   APP_CONFIG['COLUMBIA_IP_RANGES'].any? do |ir|
   #     IPAddr.new(ir) === ip_addr
   #   end
@@ -73,7 +73,7 @@ class User < ApplicationRecord
   def password
     Devise.friendly_token[0,20]
   end
-  
+
   def password=(*val)
     # NOOP
   end
@@ -83,7 +83,7 @@ class User < ApplicationRecord
   def default_email
     mail = "#{self.uid}@columbia.edu"
     self.email = mail
-   end
+  end
 
   # def generate_password
   #   self.password = SecureRandom.base64(8)

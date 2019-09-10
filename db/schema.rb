@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_03_010101) do
+ActiveRecord::Schema.define(version: 2019_09_10_151535) do
 
   create_table "key_resources", force: :cascade do |t|
     t.string "title"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2019_06_03_010101) do
     t.text "affils"
     t.datetime "created_at", precision: 6
     t.datetime "updated_at", precision: 6
+    t.index ["uid"], name: "index_users_on_uid"
   end
 
 end

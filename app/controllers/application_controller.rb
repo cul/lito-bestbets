@@ -2,6 +2,24 @@ class ApplicationController < ActionController::Base
   include Devise::Controllers::Helpers
   devise_group :user, contains: [:user]
 
+  before_action :require_allowed_user!
+
+  def require_allowed_user!
+    # reject unallowed user
+    if current_user.present?
+      if !current_user_is_allowed_to_log_in?
+        user_uid = current_user.uid
+        sign_out
+        redirect_to(root_path, flash: { error: "User #{user_uid} does not have permission to log into this app." })
+      end
+      return
+    end
+
+    return if params[:controller] == 'key_resources' && params[:action] == 'index'
+    return if params[:controller] == 'sessions'# && params[:action] == 'developer_new'
+    authenticate_user!
+  end
+
   # Overwriting the sign_out redirect path method
   def after_sign_out_path_for(_resource_or_scope)
     cas_opts = YAML.load_file(File.join(Rails.root, 'config', 'cas.yml'))[Rails.env] || {}
@@ -22,6 +40,12 @@ class ApplicationController < ActionController::Base
     after_sign_out_path
   end
 
+  private
 
-
+  def current_user_is_allowed_to_log_in?
+    return true if Rails.env.development? && current_user.uid == DEVELOPMENT_USER_CONFIG[:uid]
+    return true if ALLOWED_USER_IDS.include?(current_user.uid)
+    return true if (ALLOWED_USER_AFFILS & current_user.affils).present?
+    return false
+  end
 end
