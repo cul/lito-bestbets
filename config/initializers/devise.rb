@@ -3,7 +3,7 @@
 
 Devise.setup do |config|
 
-  Bestbets::Application.configure_devise_omniauth(config)
+  KeyResources::Application.configure_devise_omniauth(config)
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
