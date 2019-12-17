@@ -3,6 +3,8 @@ class KeyResource < ApplicationRecord
 
   strip_attributes collapse_spaces: true
   before_validation :hash_url
+  before_save :convert_null_description_to_string
+
   validates :title, presence: true, uniqueness: true
   # We don't have a unique index on the url field in the database because it's
   # an index key for a single-column index can be up to 767 bytes. We want to
@@ -15,5 +17,9 @@ class KeyResource < ApplicationRecord
   def hash_url
     return nil if self.url.nil?
     self.url_hash = Digest::SHA256.hexdigest(self.url)
+  end
+
+  def convert_null_description_to_string
+    self.description = '' if self.description.nil?
   end
 end
