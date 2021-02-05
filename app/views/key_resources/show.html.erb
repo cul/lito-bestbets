@@ -24,5 +24,8 @@
   <dd class="col-sm-9"><%= @key_resource.categories %></dd>
 
   <dt class="col-sm-3">Updated By</dt>
-  <dd class="col-sm-9"><%= @key_resource.updated_by %></dd>
+  <dd class="col-sm-9"><%= @key_resource.updated_by || '&nbsp;'.html_safe %></dd>
+
+  <dt class="col-sm-3">ID</dt>
+  <dd class="col-sm-9"><%= @key_resource.id %></dd>
 </dl>
